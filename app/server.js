@@ -20,7 +20,7 @@ const dns = require('dns');
 // });
 
 // insecure: allows all origins
-app.use(cors({ origin: "https://sslab-webapp<YourName>.azurewebsites.net" }));
+app.use(cors({ origin: "https://sslab-webappgcasanova.azurewebsites.net" }));
 
 // insecure: uses a default password if env var missing
 const { DefaultAzureCredential } = require("@azure/identity");
