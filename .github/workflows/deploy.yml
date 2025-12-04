@@ -15,15 +15,15 @@ jobs:
           creds: ${{secrets.AZURE_CREDENTIALS}}
       - name: Push to ACR
         run: |
-          az acr login -n sslablabacr
-          docker tag myapp:latest sslablabacr.azurecr.io/myapp:latest
-          docker push sslablabacr.azurecr.io/myapp:latest
+          az acr login -n sslablabacrgcasanova
+          docker tag myapp:latest sslablabacrgcasanova.azurecr.io/myapp:latest
+          docker push sslablabacrgcasanova.azurecr.io/myapp:latest
       - name: Deploy to WebApp
         run: |
           az webapp config container set \
           -g ss-lab-rg \
           -n sslab-webapp \
-          --container-image-name sslablabacr.azurecr.io/myapp:latest \
-          --container-registry-url https://sslablabacr.azurecr.io \
+          --container-image-name sslablabacrgcasanova.azurecr.io/myapp:latest \
+          --container-registry-url https://sslablabacrgcasanova.azurecr.io \
           --container-registry-user <USERNAME> \
           --container-registry-password <PASSWORD>
